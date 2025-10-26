@@ -1,0 +1,71 @@
+@import url("/home/npyl2/.cache/wal/colors-waybar.css");
+
+* {
+    font-family: 'Radio Canada Big', sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 1px;
+    border-radius: 4px;
+}
+
+window#waybar {
+    background-color: transparent;
+    color: @background;
+}
+
+#workspaces button.active {
+    color: @foreground;
+}
+
+#tray {
+    background-color: @background;
+    color: @color5;
+    padding: 0 15px 0 15px;
+}
+
+#workspaces {
+    background-color: @background;
+    padding: 0;
+}
+
+.modules-left {
+}
+
+.modules-right {
+}
+
+#pulseaudio,
+#custom-weather {
+    color: @color5; /* color5 */
+    background-color: @background; /* background */
+    margin: 0 2px 0 2px;
+    padding: 0 15px 0 15px; /* top, right, bottom, left */
+}
+
+#network {
+    color: @color2; /* color2 */
+    background-color: @background; /* background */
+    margin: 0;
+    padding: 0 15px 0 13px; /* top, right, bottom, left */
+}
+
+#clock {
+    color: @color3; /* color3 */
+    background-color: @background; /* background */
+    margin: 0 2px 0 2px;
+    padding: 0 15px 0 15px;
+}
+
+#network {
+    color: @color4; /* color4 */
+}
+
+#pulseaudio {
+    color: @color5; /* color5 */
+}
+
+#custom-weather {
+    color: @color4; /* color2 */
+    background-color: @background; /* background */
+}
+
