@@ -1,0 +1,28 @@
+#!/bin/bash
+
+if [ "$#" -ne 1 ]; then
+	echo "Usage: $0 <path_to_image>"
+	exit 1
+fi
+
+IMAGE="$1"
+MONITOR="${2:-HDMI-A-1}"
+CONFIG="$HOME/.config/hypr/hyprpaper.conf"
+
+# hyprpaper
+# Update config for persistence
+sed -i "s|^preload = .*|preload = $IMAGE|" "$CONFIG"
+sed -i "s|^wallpaper = $MONITOR,.*|wallpaper = $MONITOR,$IMAGE|" "$CONFIG"
+# Reload
+hyprctl hyprpaper preload "$IMAGE"
+hyprctl hyprpaper wallpaper "$MONITOR,$IMAGE"
+
+# Matugen
+matugen image "$IMAGE"
+
+# Wal
+wal -i $1 --backend colorz
+
+# Waybar
+pkill waybar
+waybar > /dev/null 2>&1 &
