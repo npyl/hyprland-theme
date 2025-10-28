@@ -1,0 +1,11 @@
+@import "colors.rasi"
+
+* {
+	background:  transparent;
+}
+
+window {
+	background-color: @primary;
+}
+
+@theme "/usr/share/rofi/themes/gruvbox-dark-hard.rasi"

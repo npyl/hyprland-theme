@@ -1,0 +1,17 @@
+#!/bin/bash
+
+WALL_DIR=~/Pictures/Wallpapers
+
+CWD="$(pwd)"
+
+cd "$WALL_DIR" || exit
+
+IFS=$'\n'
+
+SELECTED_WALL=$(for a in *.jpg *.png; do echo -en "$a\0icon\x1f$a\n"; done | rofi -dmenu -p "")
+
+if [ -n "$SELECTED_WALL" ]; then
+	~/.local/bin/wallset-backend "$SELECTED_WALL"
+fi
+
+cd "$CWD" || exit
